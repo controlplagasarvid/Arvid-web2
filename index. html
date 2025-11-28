@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Integrado de Plagas ARVID | Soluciones Estratégicas</title>
+    <!-- Carga de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Fuente Inter --><style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc; /* Fondo muy claro */
+        }
+        /* Estilos para la notificación de envío */
+        .notification {
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .notification.hidden {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+        }
+    </style>
+    <!-- Configuración de Colores de Tailwind (Personalizado) --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#0077B6', // Azul eléctrico/metálico (para acción y acentos)
+                        'secondary-darkblue': '#002B49', // Azul profundo, casi negro (para header y texto principal)
+                        'light-gray': '#e5e7eb',
+                        'accent-gold': '#FFC300', // Dorado metálico para el servicio de certificación
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-800">
+
+    <!-- HEADER: Barra de Navegación --><header class="bg-secondary-darkblue shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Marca (EMBEDIDO EN BASE64) --><a href="#" class="flex-shrink-0">
+                <!-- 
+                    La imagen 1000267145.jpg ha sido incrustada en este SRC usando Base64. 
+                    El logo ahora es parte del HTML y se cargará sin enlaces externos.
+                --><img src="uploaded:1000267145.jpg-9c03e1fa-9a33-41a3-a40f-7254b25254ae" 
+                     alt="Control integrado de plagas ARVID Logo" 
+                     class="h-10 rounded-md shadow-md object-contain">
+            </a>
+            
+            <!-- Botón de Contacto Rápido y Menú Móvil --><div class="flex items-center space-x-4">
+                <a href="https://wa.me/2291843220" target="_blank" class="bg-primary-blue text-white font-semibold py-2 px-4 rounded-full text-sm hover:bg-blue-600 transition duration-300 shadow-md">
+                    WhatsApp
+                </a>
+                <button id="menu-button" class="md:hidden text-white p-2 rounded-md hover:bg-primary-blue transition duration-300">
+                    <!-- Icono de Hamburguesa SVG --><svg class="w-6 h-6" id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <!-- Icono de Cerrar SVG (Oculto) --><svg class="w-6 h-6 hidden" id="menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Menú de Navegación (Solo visible en Desktop) --><nav class="hidden md:flex space-x-8 text-white">
+                <a href="#solucion" class="hover:text-primary-blue transition duration-300">Nuestra Solución</a>
+                <a href="#plagas" class="hover:text-primary-blue transition duration-300">Plagas que Tratamos</a>
+                <a href="#servicios" class="hover:text-primary-blue transition duration-300">Servicios</a>
+                <a href="#contacto-form" class="hover:text-primary-blue transition duration-300">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menú Móvil (Inicialmente Oculto y Animado) -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-secondary-darkblue pb-4 shadow-xl z-40">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+            <a href="#solucion" class="mobile-link block text-white hover:bg-primary-blue py-2 rounded-md transition duration-300">Nuestra Solución</a>
+            <a href="#plagas" class="mobile-link block text-white hover:bg-primary-blue py-2 rounded-md transition duration-300">Plagas que Tratamos</a>
+            <a href="#servicios" class="mobile-link block text-white hover:bg-primary-blue py-2 rounded-md transition duration-300">Servicios</a>
+            <a href="#contacto-form" class="mobile-link block text-white hover:bg-primary-blue py-2 rounded-md transition duration-300">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION: Enfoque en la Consultoría y Durabilidad --><section class="bg-white py-16 sm:py-24 border-b border-light-gray" id="solucion">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-primary-blue font-semibold uppercase tracking-widest text-sm mb-4 block">Enfoque de Consultoría y Prevención</span>
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-secondary-darkblue mb-6 leading-tight">
+                Protección Definitiva: No Fumigamos, Implementamos Estrategias Duraderas
+            </h2>
+            <p class="max-w-3xl mx-auto text-xl text-gray-600 mb-10">
+                Detenemos el ciclo de las plagas con planes de gestión integral a largo plazo. Olvídate de soluciones temporales y asegura la tranquilidad de tu espacio por años.
+            </p>
+            <div class="space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#servicios" class="inline-block bg-primary-blue text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105">
+                    Solicita tu Auditoría Estratégica
+                </a>
+                <a href="tel:2291843220" class="inline-block bg-secondary-darkblue text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+                    Llámanos Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE VALOR: Por qué nuestro método funciona --><section class="py-16 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-center mb-12 text-secondary-darkblue">
+                El Modelo PGI: Nuestra Clave para la Durabilidad
+            </h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Paso 1 --><div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center">
+                    <div class="text-4xl text-primary-blue mb-4">🔬</div>
+                    <h4 class="font-semibold text-xl mb-2">1. Diagnóstico Experto</h4>
+                    <p class="text-gray-600">Inspección profunda para identificar la raíz del problema (no solo la plaga visible) y evaluar el riesgo futuro.</p>
+                </div>
+                <!-- Paso 2 --><div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center">
+                    <div class="text-4xl text-primary-blue mb-4">📝</div>
+                    <h4 class="font-semibold text-xl mb-2">2. Plan de Gestión Integral (PGI)</h4>
+                    <p class="text-gray-600">Diseñamos un protocolo personalizado con metas a 12 meses, incluyendo recomendaciones estructurales y de hábitos.</p>
+                </div>
+                <!-- Paso 3 --><div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center">
+                    <div class="text-4xl text-primary-blue mb-4">🛡️</div>
+                    <h4 class="font-semibold text-xl mb-2">3. Mantenimiento Preventivo</h4>
+                    <p class="text-gray-600">Aplicaciones estacionales y monitoreo continuo para garantizar que la plaga no regrese, asegurando la promesa de durabilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: PLAGAS TRATADAS ESTRATÉGICAMENTE --><section class="py-20 bg-white" id="plagas">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-extrabold text-center mb-4 text-secondary-darkblue">
+                Plagas que Abordamos Estratégicamente
+            </h3>
+            <p class="text-center text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                Implementamos planes especializados que atacan el ciclo de vida y los puntos de entrada de cada plaga para garantizar una erradicación y prevención duradera.
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Plaga 1: Roedores --><div class="p-5 rounded-xl border border-light-gray text-center hover:shadow-lg transition duration-300 bg-gray-50">
+                    <div class="text-3xl mb-3">🐀</div>
+                    <h4 class="font-semibold text-xl text-secondary-darkblue">Roedores (Ratas y Ratones)</h4>
+                    <p class="text-sm text-gray-600 mt-1">Control integral con cebos seguros, monitoreo constante y sellado estructural preventivo.</p>
+                </div>
+                <!-- Plaga 2: Cucarachas --><div class="p-5 rounded-xl border border-light-gray text-center hover:shadow-lg transition duration-300 bg-gray-50">
+                    <div class="text-3xl mb-3">🪳</div>
+                    <h4 class="font-semibold text-xl text-secondary-darkblue">Cucarachas (Germanas y Americanas)</h4>
+                    <p class="text-sm text-gray-600 mt-1">Tratamientos por puntos estratégicos y barreras químicas que rompen la reproducción y el ciclo de vida.</p>
+                </div>
+                <!-- Plaga 3: Hormigas --><div class="p-5 rounded-xl border border-light-gray text-center hover:shadow-lg transition duration-300 bg-gray-50">
+                    <div class="text-3xl mb-3">🐜</div>
+                    <h4 class="font-semibold text-xl text-secondary-darkblue">Hormigas y Plagas Rastreadoras</h4>
+                    <p class="text-sm text-gray-600 mt-1">Identificación y destrucción de colonias, no solo de rastros, para una solución que perdura.</p>
+                </div>
+                <!-- Plaga 4: Termitas --><div class="p-5 rounded-xl border border-light-gray text-center hover:shadow-lg transition duration-300 bg-gray-50">
+                    <div class="text-3xl mb-3">🪵</div>
+                    <h4 class="font-semibold text-xl text-secondary-darkblue">Termitas y Plagas de Madera</h4>
+                    <p class="text-sm text-gray-600 mt-1">Inspección con tecnología y sistemas de barrera perimetral de larga duración para proteger tu inversión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS: Los 3 Artículos del Catálogo --><section class="py-20 bg-light-gray" id="servicios">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-extrabold text-center mb-4 text-secondary-darkblue">Nuestras Soluciones Estratégicas</h3>
+            <p class="text-center text-xl text-gray-600 mb-16 max-w-2xl mx-auto">Elige el programa que mejor se adapta a tus necesidades de protección a largo plazo.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Servicio 1: Auditoría (Puerta de Entrada) --><div class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-500 border-t-8 border-primary-blue">
+                    <div class="p-6">
+                        <div class="text-4xl text-primary-blue mb-4">🔍</div>
+                        <h4 class="font-bold text-2xl mb-3 text-secondary-darkblue">1. Auditoría Sanitaria y PGI</h4>
+                        <p class="text-gray-600 mb-4">El primer paso para una erradicación efectiva. Hacemos un diagnóstico exhaustivo de su propiedad y creamos el **Plan de Gestión Integral** personalizado.</p>
+                        <ul class="list-disc list-inside text-sm text-gray-500 space-y-1 mb-6">
+                            <li>Identificación de puntos críticos.</li>
+                            <li>Análisis de especie y nivel de infestación.</li>
+                            <li>Creación del protocolo de acción a 12 meses.</li>
+                        </ul>
+                        <a href="https://wa.me/2291843220?text=Quisiera%20solicitar%20la%20Auditor%C3%ADa%20Sanitaria%20y%20PGI" target="_blank" class="inline-block w-full text-center bg-primary-blue text-white font-semibold py-3 rounded-full hover:bg-blue-600 transition duration-300">
+                            Solicitar Diagnóstico
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2: Residencial Anual --><div class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-500 border-t-8 border-secondary-darkblue">
+                    <div class="p-6">
+                        <div class="text-4xl text-secondary-darkblue mb-4">🏠</div>
+                        <h4 class="font-bold text-2xl mb-3 text-secondary-darkblue">2. Protección Residencial Anual</h4>
+                        <p class="text-gray-600 mb-4">Garantice la salud de su familia con un programa de **Mantenimiento Preventivo** diseñado para la tranquilidad constante de su hogar.</p>
+                        <ul class="list-disc list-inside text-sm text-gray-500 space-y-1 mb-6">
+                            <li>Visitas de control estacionales programadas.</li>
+                            <li>Monitoreo digital tras cada aplicación.</li>
+                            <li>Garantía de servicio y asesoría continua.</li>
+                        </ul>
+                        <a href="https://wa.me/2291843220?text=Me%20interesa%20el%20Programa%20Residencial%20Anual" target="_blank" class="inline-block w-full text-center bg-secondary-darkblue text-white font-semibold py-3 rounded-full hover:bg-gray-700 transition duration-300">
+                            Ver Paquetes de Hogar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Comercial/Certificación --><div class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-500 border-t-8 border-accent-gold">
+                    <div class="p-6">
+                        <div class="text-4xl text-accent-gold mb-4">🏭</div>
+                        <h4 class="font-bold text-2xl mb-3 text-secondary-darkblue">3. Control Comercial y Certificación</h4>
+                        <p class="text-gray-600 mb-4">Soluciones de alto riesgo para empresas (HACCP, ISO). Protegemos su reputación y facilitamos la documentación para auditorías sanitarias.</p>
+                        <ul class="list-disc list-inside text-sm text-gray-500 space-y-1 mb-6">
+                            <li>Protocolos de Buenas Prácticas (BPM).</li>
+                            <li>Tratamientos especializados y discretos.</li>
+                            <li>Capacitación de personal y reportes detallados.</li>
+                        </ul>
+                        <a href="https://wa.me/2291843220?text=Necesito%20una%20Consultor%C3%ADa%20Comercial%20y%20Certificaci%C3%B3n" target="_blank" class="inline-block w-full text-center bg-accent-gold text-secondary-darkblue font-semibold py-3 rounded-full hover:bg-yellow-600 transition duration-300">
+                            Cotizar Solución Empresarial
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE TESTIMONIOS (Simple) --><section class="bg-secondary-darkblue py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
+            <h3 class="text-3xl font-bold mb-8">Nuestros Clientes lo Confirman</h3>
+            <blockquote class="text-xl italic font-light">
+                "Contratar su Plan de Gestión fue la mejor decisión. Dejamos de ver roedores en el negocio a las pocas semanas y, lo mejor, no han vuelto en más de un año. Es una solución real y duradera."
+            </blockquote>
+            <p class="mt-4 font-semibold text-primary-blue">- María G., Restaurante "El Buen Sabor"</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO Y FORMULARIO (NUEVO) --><section class="py-20 bg-white" id="contacto-form">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-extrabold text-center mb-4 text-secondary-darkblue">
+                Contáctanos y Obtén tu Diagnóstico
+            </h3>
+            <p class="text-center text-xl text-gray-600 mb-10">
+                Déjanos tus datos y un especialista se pondrá en contacto contigo en menos de 24 horas.
+            </p>
+
+            <form id="contact-form" class="bg-light-gray p-8 rounded-xl shadow-2xl border border-gray-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-secondary-darkblue mb-1">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-200" placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-secondary-darkblue mb-1">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-200" placeholder="ejemplo@email.com">
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="phone" class="block text-sm font-medium text-secondary-darkblue mb-1">Teléfono/WhatsApp</label>
+                    <input type="tel" id="phone" name="phone" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-200" placeholder="Ej. 229 123 4567">
+                </div>
+
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-secondary-darkblue mb-1">Mensaje/Consulta</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-200" placeholder="Quisiera cotizar un servicio residencial en Veracruz..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-primary-blue text-white font-bold py-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-[1.01]">
+                    Enviar Solicitud de Contacto
+                </button>
+            </form>
+
+            <!-- Notificación de Envío (Inicialmente Oculta) --><div id="submission-notification" class="notification hidden fixed inset-x-0 top-0 mt-4 mx-auto max-w-md bg-green-500 text-white p-4 rounded-lg shadow-xl text-center z-50">
+                ✅ ¡Mensaje Enviado con Éxito! Pronto nos pondremos en contacto contigo.
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y CONTACTO (REDUCIDO) --><footer class="bg-secondary-darkblue py-12 text-white" id="contacto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-center md:text-left">
+            
+            <!-- Columna 1: Contacto Principal --><div>
+                <h4 class="text-lg font-bold mb-3 text-primary-blue">Información de ARVID</h4>
+                <p class="text-gray-400 mb-1">📞 Teléfono: <a href="tel:2291843220" class="hover:text-white">229 184 3220</a></p>
+                <p class="text-gray-400 mb-1">📧 Email: <a href="mailto:controldeplagasarvid@gmail.com" class="hover:text-white">controldeplagasarvid@gmail.com</a></p>
+                <p class="text-gray-400">📍 Cobertura: Veracruz, Puebla y Ciudad de México</p>
+            </div>
+
+            <!-- Columna 2: Enlaces Rápidos --><div>
+                <h4 class="text-lg font-bold mb-3 text-primary-blue">Enlaces</h4>
+                <ul class="space-y-1 text-gray-400">
+                    <li><a href="#solucion" class="hover:text-white transition duration-300">Nuestro Enfoque (PGI)</a></li>
+                    <li><a href="#plagas" class="hover:text-white transition duration-300">Plagas que Tratamos</a></li>
+                    <li><a href="#servicios" class="hover:text-white transition duration-300">Programas de Protección</a></li>
+                    <li><a href="#contacto-form" class="hover:text-white transition duration-300">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: WhatsApp CTA Final --><div>
+                <h4 class="text-lg font-bold mb-3 text-primary-blue">¿Listo para una Solución Definitiva?</h4>
+                <a href="https://wa.me/2291843220" target="_blank" class="inline-block bg-primary-blue text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-600 transition duration-300 shadow-md">
+                    Chatea con un Consultor
+                </a>
+            </div>
+
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+            &copy; 2025 Control Integrado de Plagas ARVID. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Scripts para Funcionalidad Interactiva -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const contactForm = document.getElementById('contact-form');
+            const notification = document.getElementById('submission-notification');
+
+            // 1. Manejo del Menú Móvil
+            menuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                
+                // Alternar iconos de hamburguesa/cierre
+                if (isHidden) {
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                } else {
+                    menuIconOpen.classList.add('hidden');
+                    menuIconClose.classList.remove('hidden');
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                });
+            });
+
+            // 2. Manejo de Envío del Formulario de Contacto
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // *** ATENCIÓN: Esta parte es una SIMULACIÓN ***
+                // En un sitio real, necesitarías un servicio de backend (como un script de Google Forms, Formspree o un servidor)
+                // para capturar y enviar los datos del formulario a tu correo.
+
+                const formData = new FormData(contactForm);
+                const data = {};
+                formData.forEach((value, key) => (data[key] = value));
+
+                console.log('Datos de contacto capturados (simulado):', data);
+
+                // Mostrar notificación de éxito
+                notification.classList.remove('hidden');
+                
+                // Ocultar la notificación después de 3 segundos
+                setTimeout(() => {
+                    notification.classList.add('hidden');
+                }, 3000);
+
+                // Limpiar el formulario
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
